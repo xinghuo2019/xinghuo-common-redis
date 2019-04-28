@@ -27,7 +27,10 @@ spring boot 集成 swagger 封装公共组件
 	spring.redis.lettuce.pool.min-idle		否				连接池中的最小空闲连接	
 
 4、在业务使用类中注入XhRedisUtils<Object>工具类对象
+</br>
 示例如下：
+</br>
+<p>
 package com.xinghuo.redis.dao;
 import org.springframework.stereotype.Repository;
 import com.xinghuo.Student;
@@ -39,7 +42,10 @@ public class XhDemoController {
 	@Autowired
 	XhRedisUtils<Student> studentRedisDao;
 }
+</p>
+</br>
 5、redis分布式锁
+</br>
 	/**
 	 * redis分布式锁加锁方法 
 	 * @param key加锁键全局唯一
@@ -47,7 +53,7 @@ public class XhDemoController {
 	 * @return boolean false-获取锁失败 true-获取锁成功
 	 */
 	public boolean lock(String key, Long value)
-	
+</br>
 	/**
 	 * redis分布式锁解锁方法
 	 * @param key解锁键全局唯一
@@ -55,8 +61,9 @@ public class XhDemoController {
 	 * @return boolean false-解锁失败 true-解锁成功
 	 */
 	public void unlock(String key, Long value)
-	
+</br>	
 6、可以直接注入RedisTemplate对象
+</br>
 	如下：
 	@Autowired
 	private RedisTemplate<String,T> redisTemplate;
